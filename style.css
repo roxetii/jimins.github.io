@@ -26,7 +26,8 @@ p {
 .p-highlight {
 
     background-color: #cef3df;
-    padding: 6px;
+    font-size: 18px;
+    padding: 1px;
     border-radius: 4px;
 }
 
@@ -72,6 +73,13 @@ img {
     border-color: #e48fc0;
 }
 
+.right-img {
+
+    display: block;
+    margin-left: 70px;
+    margin-right: auto;
+}
+
 .no-border-img img { 
 
     border: none;
@@ -93,7 +101,15 @@ li {
 }
 
 table {
+
+    margin-left:auto;
+    margin-right:auto;
     background-color: #fff7f7;
+}
+
+table, th, td {
+    
+    border:1px solid black;
 }
 
 nav {
