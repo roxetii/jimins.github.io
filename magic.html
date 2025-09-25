@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">    
+
+<head>
+    <meta charset="UTF-8">
+    <title>Magic Time</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="images/favicon.PNG">
+
+</head>
+
+<body class="magic">
+    <nav>
+        <!-- Logo on the left -->
+        <a href="index.html" class="logo no-border-img"><img src="images/Jimin.PNG" alt="Site Logo"></a>
+        
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="magic.html">Books</a></li>
+            <li><a href="https://github.com/roxetii" target="_blank">GitHub</a></li>
+            <li><a href="https://roxetii.itch.io/" target="_blank">Itch</a></li>
+        </ul>
+    </nav>
+
+    <main class="stage">
+        <div class="gifts">
+            <a><img src="magic_img/gift.PNG" alt="Gift 1"></a>
+            <a><img src="magic_img/gift.PNG" alt="Gift 2"></a>
+            <a><img src="magic_img/gift.PNG" alt="Gift 3"></a>
+        </div>
+    
+        <div class="cat-grid">
+            <img id="cat" class="cat" src="magic_img/cat.PNG" alt="Magic Cat">
+            <div class="about-text bubble">Click a gift for a surprise!</div>
+        </div>
+
+    </main>
+    
+
+    <script>
+        const cat = document.getElementById("cat")
+        let isBlushing = false;
+
+        cat.addEventListener("click", () => 
+        {
+            if (isBlushing) {
+                cat.src = "magic_img/cat.PNG"; // normal
+            } else {
+                cat.src = "magic_img/blush_cat.PNG"; // blushing 
+            }
+            isBlushing = !isBlushing;
+        });
+    </script>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", ()=> {
+            const gifts = document.querySelectorAll(".gifts a");
+
+            // make a true array copy
+            const giftArray = Array.from(gifts);
+
+            // Fisher–Yates shuffle
+            // code from https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random2
+            for (let i = giftArray.length - 1; i > 0; i--) {
+                // pick random index 0..i
+                const j = Math.floor(Math.random() * (i + 1));
+                
+                // swap gifts[i] and gifts[j]
+                let k = giftArray[i];
+                giftArray[i] = giftArray[j];
+                giftArray[j] = k;
+            }
+
+            giftArray[0].href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Rickroll
+            giftArray[1].href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Rickroll
+            giftArray[2].href = "books.html"; // books page
+
+            // optional: open only external links in new tab
+            giftArray[0].target = "_blank";
+            giftArray[1].target = "_blank";
+        });
+    </script>
+</body>
+</html>

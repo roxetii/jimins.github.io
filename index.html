@@ -3,51 +3,59 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Jimin's Art</title>
+    <link rel="icon" type="image/png" href="images/favicon.PNG">
+    <title>Jimin's Site</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-
-    <div class="center">
     <nav>
-        <a href="gallery.html" targe="_blank">Gallery</a> 
-        <a href="https://lonuquin.itch.io/puffs-computer-quiz" target="_blank"> Puff's Computer Quiz</a>
-        <a href="#about">About me</a>
-        <a href="#skills">My Skills</a>
-        <a href="#featured-works">Featured works</a>
+        <!-- Logo on the left -->
+        <a href="index.html" class="logo no-border-img"><img src="images/Jimin.PNG" alt="Site Logo"></a>
+        
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="magic.html">Books</a></li>
+            <li><a href="https://github.com/roxetii" target="_blank">GitHub</a></li>
+            <li><a href="https://roxetii.itch.io/" target="_blank">Itch</a></li>
+        </ul>
     </nav>
-    <p style="text-align:right; font-size:medium; color: #8a4865"><span class="p-highlight_light_green">The password to Puff's Computer Quiz is: PuffQuiz</span></p>
-    </div>
 
-    <h1>Jimin's Art</h1>
-
+    <!-- <p style="text-align:right; font-size:medium; color: #8a4865"><span class="p-highlight_light_green">The password to Puff's Computer Quiz is: PuffQuiz</span></p> -->
     <div class="center no-border-img">
-    <img src="images/site_banner.PNG" alt="My site's banner" width="710" height="379">
+        <img source src="images/site_banner.GIF" alt="Site banner" class="banner">
     </div>
 
+    <!--
     <p><span class="p-highlight">Hi! I am Jimin. I am an artist and game developer based in BC, Canada. I am also a programming student too.</span></p>
-
-    <hr>
+    -->
 
     <section id="about">
         <h2>About Me</h2>
 
-        <div class="center no-border-img">
+        <div class="about-grid no-border-img">   
         <img src="images/jimin_portrait.PNG" alt="My portrait" width="250" height="300">
-        </div>
 
-        <p>
-            While I love creating digital art and making games, I also enjoy <a href="https://en.wikipedia.org/wiki/Depth_psychology" target="_blank"> depth psychology</a>. 
-            I really like <a href="https://en.wikipedia.org/wiki/Individuation" target="_blank">philosophy</a>, <a href="https://www.amazon.ca/MONEY-Master-Game-Financial-Freedom-ebook/dp/B00MZAIU4G" target="_blank">investing</a>, and studying <a href="https://www.amazon.com/Crushing-Great-Entrepreneurs-Business-Influence/dp/0062674676" target="_blank">business development</a> too. I'm fluent in both Korean and English, by the way.
-            <br>
-            <br>
-            If you want to see my other art, visit the site's <a href="gallery.html" target="_blank">gallery</a>!
-            <br>
-            <br>
-            I am also made a game called Puff's Computer Quiz. <a href="https://lonuquin.itch.io/puffs-computer-quiz" target="_blank">Come check it out</a>!
-        </p>
+        <div class="about-text bubble">
+            <div class="about-heading">Jimin 07/18</div>
+
+            <p>
+                Hi! I'm Jimin. While I love creating digital art and making games, I also enjoy 
+                <a class="tag" href="https://en.wikipedia.org/wiki/Depth_psychology" target="_blank">psychology</a>
+                and 
+                <a class="tag" href="https://en.wikipedia.org/wiki/Individuation" target="_blank">philosophy</a>
+            </p>    
+                <ul>
+                    <li>🏔️ Canadian | Fluent in Korean & English</li>
+                    <li>🕊️ I’m I draw inspiration from books... and when my mind wanders</li>
+                    <li>📜 I’m fascinated by Jungian analytical psychology, dream analysis, and other topics that make me curious!</li>
+                    <li>🕹️ I love building games and projects that make people smile</li>
+            </ul>
+        </div>
+        <!-- Add icons for socials (GitHub and itch)-->
+         
     </section>
 
     <section id = "skills">
@@ -58,7 +66,7 @@
                 <tr>
                     <th>Skill</th>
                     <th>Tools/ Languages</th>
-                    <th>How I Use It</th>
+                    <th>How I Use Them</th>
                     <th>Famaliarity</th>
                 </tr>
             </thead>
@@ -67,23 +75,23 @@
                     <td>Programming</td>
                     <td>Java, C++, C#, Python, Playmaker, Fungus, Visual Studio Code, VS Code, GitHub</td>
                     <td>Programming exercises and Unity game development</td>
-                    <td>Semi-beginner/ intermediate. 2024-2025</td>
+                    <td>Intermediate. 2024-2025</td>
                 </tr>
                 <tr>
                     <td>Game Engines</td>
                     <td>Unity</td>
                     <td>Building 3D and 2D games.</td>
-                    <td>Semi-beginner/ intermediate. 2024-2025</td>
+                    <td>Intermediate. 2024-2025</td>
                 </tr>
                 <tr>
                     <td>Web Development</td>
-                    <td>HTML, CSS</td>
+                    <td>HTML, CSS, Javascript</td>
                     <td>To make this website! I'm still a beginner, though</td>
                     <td>Beginner. 2025</td>
                 </tr>
                 <tr>
                     <td>Digital Art/ Animation</td>
-                    <td>Procreate, Flipaclip, ibisPaint X, Canva, Krita</td>
+                    <td>Procreate, Toonsquid, Flipaclip, ibisPaint X, Canva, Krita</td>
                     <td>To make game art and miscellaneous creative works (comics, characters, you name it!)</td>
                     <td>Advanced. 2018 - 2025</td>
                 </tr>
@@ -109,18 +117,16 @@
         </table>
     </section>
 
-    <hr>
+    <br>
 
     <section id = "featured-works">
         <h2>Featured Works</h2>
 
-        <div class="image-grid-three-cols">
+        <div class="image-gallery">
         <img src="images/a_lady.PNG" alt="A semi-realistic painting of a lady">
         <img src="images/passing_an_apple.PNG" alt="A character passing an apple">
         <img src="images/cozy_sofa.PNG" alt="Characters on a cozy sofa">
         </div>
     </section>
-
 </body>
-
 </html>

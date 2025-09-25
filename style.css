@@ -3,19 +3,25 @@ html {
     scroll-behavior: smooth;
 }
 
-hr {
-    border:none;
-    border-top: 10px dotted rgb(212, 142, 226);
-    margin: 2em 0;
+body.magic {
+    background-image: url(magic_img/red_bg.PNG);
+
+    padding-top: 60px; /* no nav bar */
 }
 
 body {
     font-family: arial, helvetica, sans-serif;
     font-size: 14px;
     color: black;
-    background-color: rgb(236, 218, 252);
-    margin: 20px;
+    background-image: url(images/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
     padding: 0;
+
+    padding-top: 60px; /* to avoid nav bar */
 }
 
 .center {
@@ -23,27 +29,23 @@ body {
     text-align: center;
 }
 
+.p-disclaimer {
+  font-weight: bold;
+  font-size: 16px;
+  color: rgba(105, 60, 119, 0.8);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin: 10px auto;    
+  max-width: fit-content;
+  display: block;
+}
+
 p {
     font-size: 15px;
     line-height: 21px;
     text-align: center;
-}
-
-.p-highlight {
-
-    background-color: #cef3df;
-    font-size: 18px;
-    padding: 1px;
-    border-radius: 4px;
-}
-
-.p-highlight_light_green {
-
-    background-color: #faf1c1; 
-    color: #5c4033;
-    font-size: 18px;
-    padding: 1px;
-    border-radius: 4px;
 }
 
 h1 {
@@ -81,6 +83,16 @@ h3 {
     font-size: 1.25em;
 }
 
+.about-heading {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    padding: 2px;
+    padding-left: 14px;
+    color: #fffacd;
+    background-color: #c8b8eb;
+}
 
 img {
 
@@ -90,62 +102,141 @@ img {
 }
 
 .no-border-img img { 
-
     border: none;
 }
 
-.image-grid-three-cols {
-    --gap: 30px;
-    --num-cols: 3;
-    --row-height: auto;
-
-    box-sizing: border-box;
-    padding: var(--gap);
-
-    display: grid;
-    grid-template-columns: repeat(var(--num-cols), 1fr);
-    grid-auto-rows: var(--row-height);
-    gap: var(--gap);
+/* nav bar */
+nav {
+  display: flex;                      /* flex layout */
+  justify-content: space-between;     /* logo left, links right */
+  align-items: center;                /* vertical centering */
+  background-color: rgba(166, 212, 133, 0.5);
+  padding: 0 12px; /* horizontal only */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1000;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.image-grid-three-cols > img {
+nav .logo img {
+  height: 40px;  /* control size */
+  width: auto;
+  cursor: pointer;
+}
 
-    width: 100%;
-    max-width: 450px;
+nav ul {
+  list-style-type: none;
+  display: flex; /* makes links line up horizontally */
+  gap:  8px; /* spacing between items */
+  padding: 0;
+}
+
+nav li a {
+  display: flex;                 /* center text vertically */
+  align-items: center;
+  height: 50px;                  /* same as nav height */
+  padding: 0 14px;               /* horizontal only */
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: rgb(156, 216, 209);
+}
+/*-----------------*/
+
+.banner {
+    display: block;
+    width: 50%;
     height: auto;
-    object-fit: cover;
+    display: block; /* makes the image a block element */
+    margin-left: auto;
+    margin-right: auto; /* centers horizontally */
 }
 
-.image-grid {
-    --gap: 20px;
-    --num-cols: 2;
-    --row-height: auto;
+/* gallery */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* 3 columns, side by side */
+  gap: 70px;  /* space between images */
+  max-width: 1800px;  /* optional, for centering */
+  margin: 30px 50px 0 50px;     /* centers the gallery block */
+}
 
-    box-sizing: border-box;
-    padding: var(--gap);
+.image-gallery img {
+  width: 100%;          /* fill their grid cell */
+  aspect-ratio: auto;  /* maintain original aspect ratio */
+  object-fit: contain;  /* scale to fit without cropping */
+  display: block;
+}
+/* ------------------------------ */
 
+/* about */
+.about-grid {
     display: grid;
-    grid-template-columns: repeat(var(--num-cols), 1fr);
-    grid-auto-rows: var(--row-height);
-    gap: var(--gap);
+    grid-template-columns: 1fr 1fr;
+    align-items: center;      /* vertically center image + text */
+    gap: 40px;                /* reduce from 100px */
+    max-width: 900px;
+    margin: 0 auto 20px auto; /* less bottom margin */ /* top right bottom left */
 }
 
-.image-grid > img {
-
-    width: 100%;
+.about-grid img {
+    width: 100%;   /* don’t overshoot */
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 
-a {
+.about-text {
+  margin-top: 60px;
+  max-width: 400px; /* or whatever you need */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* bubble code inspired by  https://youtu.be/Rar2u77i_yg?si=BEkUDbN8vwZYWPBF */
+/* new bubble styles */
+.bubble {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8); /* translucent white */
+  padding: 20px;
+  color: #222;
+  border-radius: 10px;
+  flex: flex-end; /* align to right */
+  margin-bottom: 150px;     /* adjust how high it sits */
+}
+
+/* little triangle (tail) */
+.bubble::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -20px; /* shift further left if needed */
+  width: 0;
+  height: 0;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-right: 20px solid rgba(255,255,255,0.82);
+}
+
+a.tag {
     
+    display: inline;
     background-color: #cef3df;
-    font-size: 18px;
+    font-size: inherit;
     padding: 1px;
     border-radius: 4px;
     color:rgb(24, 82, 129);
     text-decoration: none;
 }
+
+.bubble a:hover {
+    background-color: #a2ddbd;
+}
+/* -------------------------------*/
 
 strong {
     font-style: italic;
@@ -154,8 +245,7 @@ strong {
 
 li {
 
-    color: #900;
-    font-style: italic;
+    color: rgb(80, 63, 128);
 }
 
 table {
@@ -170,24 +260,117 @@ table, th, td {
     border:1px solid black;
 }
 
-nav {
-    text-align: right;
-    font-size: 1.5em;
-    margin: 0;
-    padding: 10px;
+a:hover {
+    background-color: transparent;
 }
 
-nav a {
-
-    background-color: rgb(149, 226, 149);
-    color: white;
-    padding: 4px 8px;
-    text-decoration: none;
-    border-radius: 4px;
-    margin: 0 5px;
-
+/* magic */
+body.magic {
+  margin: 0;
+  overflow: hidden;                  /* no scroll */
+  background: url(magic_img/red_bg.PNG) center/cover no-repeat;
 }
 
-nav a:hover {
-    background-color: rgb(117, 202, 177);
+/* stage takes up whole viewport */
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 3 gifts centered horizontally at top-middle */
+.gifts {
+  position: absolute;
+  top: 20%;                          /* adjust how far from top */
+  left: 50%;
+  transform: translateX(-50%);       /* true horizontal center */
+  display: flex;
+  gap: 20px;                         /* space between gifts */
+}
+
+.gifts img {
+  width: 30vw; 
+  height: auto;
+  border: none;                      /* remove dashed img border */
+  display: block;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.gifts img:hover {
+  transform: scale(1.05);
+}
+
+.cat:hover {
+    transform: scalex(1.08)
+}
+
+/* cat anchored bottom-left */
+.cat {
+  width: 25vw;
+  border: none;
+}
+
+.cat-grid {
+    display: grid;
+    grid-template-columns: auto 1fr; /* cat and text side by side */
+    gap: 0px;  /* space between cat and bubble */
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    align-items: flex-end; /* align to bottom */
+}
+
+/* books */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  column-gap: 150px;
+  row-gap: 50px;
+  max-width: 1500px;
+  margin: 50px auto;
+}
+
+/* give each book a fixed 2:3 tile, image fits inside */
+.book-tile { 
+  aspect-ratio: 2 / 3;
+  background: transparent;   /* or white if you want “margins” around covers */
+}
+
+.book-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border: none;
+}
+
+/* Projects */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal-width columns */
+  row-gap: 60px;
+  margin: 50px;
+}
+
+/* Prokect description card */
+.square {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8); /* translucent white */
+  padding: 20px;
+  color: #222;
+  border-radius: 10px;
+  flex: flex-end; /* align to right */
+  margin-bottom: 150px;     /* adjust how high it sits */
+}
+
+/* Responsive itch.io badge (no wrapper needed) */
+.itch {
+  width: 100%;
+  max-width: 750px;          /* cap at native width */
+  aspect-ratio: 750 / 167;   /* preserve the badge shape */
+  height: auto;              /* works with aspect-ratio */
+  border: 0;
+  display: block;
 }
