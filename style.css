@@ -9,10 +9,14 @@ body.magic {
     padding-top: 60px; /* no nav bar */
 }
 
+/* 1. Import Cormorant Garamond and a clean supporting font for readability */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;600&display=swap');
+
 body {
-    font-family: arial, helvetica, sans-serif;
-    font-size: 14px;
-    color: black;
+    /* Use Inter for general UI/Nav and technical descriptions to stay competent */
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; /* Increased from 14px; Garamond/Inter need more space to breathe */
+    color: #1a1a1a;  /* Slightly softer than pure black */
     background-image: url(images/background.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -20,8 +24,13 @@ body {
     background-size: cover;
     margin: 0;
     padding: 0;
+    padding-top: 60px;
+}
 
-    padding-top: 60px; /* to avoid nav bar */
+/* 2. Apply Cormorant Garamond to the 'Thinker' elements */
+h1, h2, h3, .about-heading, .bubble, .square, p 
+table, td, th, li {
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .center {
@@ -43,7 +52,7 @@ body {
 }
 
 p {
-    font-size: 15px;
+    font-size: 20px;
     line-height: 21px;
     text-align: center;
 }
@@ -51,7 +60,7 @@ p {
 h1 {
     color: #ffc;
     background-color: #d8b599;
-    font-size: 2em;
+    font-size: 3em;
     margin: 0;
     margin-bottom: 7px;
     padding: 4px;
@@ -67,7 +76,7 @@ h2 {
     text-align:center;
     background-color: #d8b599;
     color: #fffacc;
-    font-size: 1.5em;
+    font-size: 2.2em;
     margin: 0;
     padding: 2px;
     padding-left: 14px;
@@ -107,6 +116,7 @@ img {
 
 /* nav bar */
 nav {
+  font-family: 'Inter', sans-serif;
   display: flex;                      /* flex layout */
   justify-content: space-between;     /* logo left, links right */
   align-items: center;                /* vertical centering */
@@ -225,16 +235,15 @@ nav a:hover {
 a.tag {
     
     display: inline;
-    background-color: #cef3df;
     font-size: inherit;
     padding: 1px;
     border-radius: 4px;
-    color:rgb(24, 82, 129);
+    color:rgb(95, 84, 145);
     text-decoration: none;
 }
 
 .bubble a:hover {
-    background-color: #a2ddbd;
+    background-color: #ffffffa6;
 }
 /* -------------------------------*/
 
@@ -249,15 +258,20 @@ li {
 }
 
 table {
-
+    font-size: 1.1rem;
     margin-left:auto;
     margin-right:auto;
     background-color: #fff7f7;
 }
 
 table, th, td {
-    
     border:1px solid black;
+}
+
+th {
+    background-color: #d8b599; /* Matches header color for consistency */
+    color: #ffc;
+    font-weight: 700;
 }
 
 a:hover {
@@ -428,4 +442,20 @@ body.magic {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* CS50 certificate --*/
+.certificate-icon {
+    display: flex;
+    justify-content: center; /* Centers the certificate horizontally */
+    padding: 20px;
+    overflow: hidden;        /* Prevents any stray pixels from breaking the layout */
+}
+
+.certificate-icon img {
+    width: 100%;             /* Forces the image to match the container width */
+    max-width: 600px;        /* Limits it so it's readable but not overwhelming */
+    height: auto;            /* Maintains aspect ratio so it's not squashed */
+    display: block;          /* Removes unwanted bottom whitespace */
+    border: 1px solid #ccc;  /* Optional: gives it a clean frame */
 }
